@@ -1,0 +1,908 @@
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="true">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<title>방부장</title>
+<link rel="stylesheet" type="text/css" href="css/bb_font.css">
+<link rel="stylesheet" type="text/css" href="http://m.bbjang.com/_global/assets/css/bb_default.css">
+<link rel="stylesheet" type="text/css" href="http://m.bbjang.com/_global/assets/css/bb_pop.css">
+<link rel="stylesheet" href="css/bb_view.css" type="text/css">
+<link rel="stylesheet" href="http://m.bbjang.com/_global/assets/css/bb_main_list.css" type="text/css">
+<link rel="stylesheet" href="http://m.bbjang.com/_global/assets/css/bb_float_btn.css" type="text/css">
+<link rel="stylesheet" href="http://m.bbjang.com/_global/assets/css/bb_ad.css" type="text/css">
+<link rel="stylesheet" href="http://m.bbjang.com/_global/assets/css/bb_management.css" type="text/css">
+</head>
+<body>
+<div id="wrap">
+    <div id="header" class="ht_45 bg_blue header_f">
+        <div class="btn_back">
+            <a href="javascript:void(0);" id="goBackBtn" onclick="cl.goBack()"></a>
+        </div>
+        <h1 class="header_txt apt_text_int">우미호반</h1>
+        <div class="btn_package">
+           <!--
+            <div class="interest_btn">
+                <a href="#">
+                    <span class="interest_on">관심단지등록</span>
+                </a>
+            </div>-->
+            <div class="interest_btn">
+                <a href="#">
+                    <span class="interest_off">관심단지삭제</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="container" class="pt_45 pd_45">
+        <ul class="apt_info_tab">
+            <!-- 활성화된 li에는 class="a_slct_tab" 추가-->
+            <li class="apt_tab">
+                <a href="#">
+                    단지정보
+                </a>
+            </li>
+            <li class="apt_tab a_slct_tab">
+                <a href="#">
+                    매물
+                    <span class="apt_r">(</span><span class="apt_br">10</span><span class="apt_r">)</span>
+                </a>
+            </li>
+        </ul>
+        <div class="int_cont_01" style="display:none;">
+            <div class="apt_complex">
+                <img src="http://image.bbjang.com/imgs/bbjang/interest/apt_build_bg.png" class="complex_img" />
+                <div class="complex_txt">
+                    <p class="complex_local">광주 서구 치평동</p>
+                    <p class="complex_name">한신휴플러스</p>
+                </div>
+            </div>
+            <div id="aptInfoDataWrap" class="dt_data_wrap">
+                <h3 class="dt_h3">단지정보
+                    <!--(180314 정우아) 관심단지 등록버튼 추가-->
+                    <div class="apt_info_btn">
+                        <a href="#"><span class="int_info_on">관심단지등록</span></a>
+                    </div>
+                    <!--(180314 정우아)관심단지등록을 누르면 아래처럼 클래스와 내용 변경
+                    <div class="apt_info_btn">
+                        <a href="#"><span class="int_info_off">관심단지삭제</span></a>
+                    </div>
+                    -->
+                </h3>
+                <div class="public_data">
+                    <ul class="complex_icon_ul">
+                        <li class="complex_icon_li">
+                            <div class="complex_icon calendar"></div>
+                            <div class="complex_icon_tit">준공년도</div>
+                            <div class="complex_icon_txt">2003.03</div>
+                        </li>
+                        <li class="complex_icon_li">
+                            <div class="complex_icon apart"></div>
+                            <div class="complex_icon_tit">동/층</div>
+                            <div class="complex_icon_txt">9개동/18층</div>
+                        </li>
+                        <li class="complex_icon_li">
+                            <div class="complex_icon peaple"></div>
+                            <div class="complex_icon_tit">세대수</div>
+                            <div class="complex_icon_txt">430</div>
+                        </li>
+                        <li class="complex_icon_li">
+                            <div class="complex_icon parking"></div>
+                            <div class="complex_icon_tit">가구당주차</div>
+                            <div class="complex_icon_txt">1.19대</div>
+                        </li>
+                    </ul>
+                    <div id="apartApidbBox">
+                        <ul class="complex_info_ul">
+                            <li class="complex_info_li">
+                                <div class="complex_info_left">면적분포</div>
+                                <div class="complex_info_right">
+
+                                    114.03m<sup>2</sup>, 131.79m
+                                    <sup>2</sup>, 59.98m
+                                    <sup>2</sup>, 59.99m
+                                    <sup>2</sup>, 84.2m
+                                    <sup>2</sup>
+                                </div>
+                            </li>
+                            <li class="complex_info_li">
+                                <div class="complex_info_left">현관구조</div>
+                                <div class="complex_info_right">계단식</div>
+                            </li>
+                            <li class="complex_info_li">
+                                <div class="complex_info_left">난방방식</div>
+                                <div class="complex_info_right">지역난방</div>
+                            </li>
+                            <li class="complex_info_li">
+                                <div class="complex_info_left">건설사명</div>
+                                <div class="complex_info_right"> 삼성물산 건설부문</div>
+                            </li>
+                        </ul>
+                        <div class="maintain_box ">
+                            <div class="data_sub_tit">관리비</div>
+                            <div class="data_none hidden">등록된 관리비 정보가 없습니다</div>
+                            <div class="maintain_table ">
+                                <table cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                        <tr class="first_tr">
+                                            <td colspan="3" class="total_td">
+                                                월 139,729 원
+                                                <div class="tit">(12월 평균)</div>
+                                            </td>
+                                        </tr>
+                                        <tr class="last_tr">
+                                            <td>
+                                                <div class="tit">연평균<br>(1월~12월)</div>140,592원</td>
+                                            <td>
+                                                <div class="tit">하절기평균<br>(6월~8월)</div>150,590원</td>
+                                            <td>
+                                                <div class="tit">동절기평균<br>(12월~2월)</div>138,179원</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dt_data_wrap" id="jsCommerceArea">
+                <h3 class="dt_h3">매물주변정보</h3>
+                <div class="commerce_data">
+                    <div class="main_tab tab_5">
+                        <div class="main_tab_box" id="jsSchoolDistrict"><input type="radio" name="main_tab" class="main_tab_input" value="jsSchoolBox" checked=""><label class="main_tab_lb">학군정보</label></div>
+                        <div class="main_tab_box" id="jsRealDeal" data-kinds="jsPublic"><input type="radio" name="main_tab" class="main_tab_input" value="jsPriceBox"><label class="main_tab_lb">실거래가</label></div>
+                        <div class="main_tab_box"><input type="radio" name="main_tab" class="main_tab_input" value="population"><label class="main_tab_lb">인구분석</label></div>
+                        <div class="main_tab_box"><input type="radio" name="main_tab" class="main_tab_input" value="floatingPopulation"><label class="main_tab_lb">유동인구</label></div>
+                        <div class="main_tab_box"><input type="radio" name="main_tab" class="main_tab_input" value="sector"><label class="main_tab_lb">업종분석</label></div>
+                    </div>
+                    <div class="commerce_area school_box" id="jsSchoolBox" style="min-height: 295px;">
+                        <div class="data_sub_tit">주요학군정보 (반경 2km 이내)</div>
+                        <div class="radio_bar">
+                            <div class="bar_box" data-kinds="jsTotal">
+                                <input type="radio" name="school" class="bar_input" checked="">
+                                <label class="bar_lb">전체<span class="sub_txt" id="totSchool">(29개)</span></label>
+                            </div>
+                            <div class="bar_box" data-kinds="jsElement">
+                                <input type="radio" name="school" class="bar_input">
+                                <label class="bar_lb">초등학교<span class="sub_txt" id="totEschool">(15개)</span></label>
+                            </div>
+                            <div class="bar_box" data-kinds="jsMiddle">
+                                <input type="radio" name="school" class="bar_input">
+                                <label class="bar_lb">중학교<span class="sub_txt" id="totMschool">(8개)</span></label>
+                            </div>
+                            <div class="bar_box" data-kinds="jsHigh">
+                                <input type="radio" name="school" class="bar_input">
+                                <label class="bar_lb">고등학교<span class="sub_txt" id="totHschool">(6개)</span></label>
+                            </div>
+                        </div>
+                        <div id="jsSchoolTable" class="school_table">
+                            <div id="jsTotal" class="">
+                                <table cellspacing="0" cellpadding="0" class="data_table">
+                                    <tbody>
+                                        <tr class="thead">
+                                            <td>구분</td>
+                                            <td>학교명</td>
+                                            <td>학급당 학생수</td>
+                                        </tr>
+                                        <tr class="tbody">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울신석초(공립) / 310m</td>
+                                            <td>22.2명</td>
+                                        </tr>
+                                        <tr class="tbody">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울염리초(공립) / 410m</td>
+                                            <td>27.2명</td>
+                                        </tr>
+                                        <tr class="tbody">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_middle.png" width="30" height="14" alt="중학교"></td>
+                                            <td>동도중(사립) / 618m</td>
+                                            <td>27.4명</td>
+                                        </tr>
+                                        <tr class="tbody">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_middle.png" width="30" height="14" alt="중학교"></td>
+                                            <td>광성중(사립) / 681m</td>
+                                            <td>23.6명</td>
+                                        </tr>
+                                        <tr class="tbody">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울용강초(공립) / 681m</td>
+                                            <td>20명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_high.png" width="30" height="14" alt="고등학교"></td>
+                                            <td>서울디자인고(사립) / 685m</td>
+                                            <td>25.8명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_middle.png" width="30" height="14" alt="중학교"></td>
+                                            <td>신수중(공립) / 690m</td>
+                                            <td>26.4명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_high.png" width="30" height="14" alt="고등학교"></td>
+                                            <td>광성고(사립) / 725m</td>
+                                            <td>30.6명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_high.png" width="30" height="14" alt="고등학교"></td>
+                                            <td>서울여자고(공립) / 802m</td>
+                                            <td>28.7명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_middle.png" width="30" height="14" alt="중학교"></td>
+                                            <td>서울여자중(공립) / 854m</td>
+                                            <td>26.7명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울마포초(공립) / 921m</td>
+                                            <td>22.9명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_high.png" width="30" height="14" alt="고등학교"></td>
+                                            <td>숭문고(사립) / 924m</td>
+                                            <td>30.9명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_middle.png" width="30" height="14" alt="중학교"></td>
+                                            <td>숭문중(사립) / 972m</td>
+                                            <td>23.4명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울원효초(공립) / 1209m</td>
+                                            <td>23.5명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울공덕초(공립) / 1224m</td>
+                                            <td>23.4명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울창천초(공립) / 1286m</td>
+                                            <td>13명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_middle.png" width="30" height="14" alt="중학교"></td>
+                                            <td>창천중(공립) / 1304m</td>
+                                            <td>20.6명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_high.png" width="30" height="14" alt="고등학교"></td>
+                                            <td>한세사이버보안고(사립) / 1347m</td>
+                                            <td>25.3명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울한서초(공립) / 1366m</td>
+                                            <td>13.1명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울서강초(공립) / 1398m</td>
+                                            <td>22.4명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_high.png" width="30" height="14" alt="고등학교"></td>
+                                            <td>성심여자고(사립) / 1486m</td>
+                                            <td>29명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_middle.png" width="30" height="14" alt="중학교"></td>
+                                            <td>성심여자중(사립) / 1517m</td>
+                                            <td>27.6명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울대신초(공립) / 1700m</td>
+                                            <td>15.8명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울창서초(공립) / 1779m</td>
+                                            <td>15.6명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울금양초(공립) / 1832m</td>
+                                            <td>21.5명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울아현초(공립) / 1912m</td>
+                                            <td>18.8명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울서교초(공립) / 1933m</td>
+                                            <td>23.4명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_middle.png" width="30" height="14" alt="중학교"></td>
+                                            <td>아현중(공립) / 1974m</td>
+                                            <td>25.3명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>이화여자대학교사범대학부속초(사립) / 1980m</td>
+                                            <td>26명</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="data_sub_more jsPublicMoreButton" data-state="on" data-kinds="jsTotal" data-count="5">더보기<img src="http://image.bbjang.com/imgs/bbjang/img01/ico_data_sub_more.png" width="10" height="6"></div>
+                            </div>
+
+                            <div id="jsElement" class="hidden">
+                                <table cellspacing="0" cellpadding="0" class="data_table">
+                                    <tbody>
+                                        <tr class="thead">
+                                            <td>구분</td>
+                                            <td>학교명</td>
+                                            <td>학급당 학생수</td>
+                                        </tr>
+                                        <tr class="tbody">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울신석초(공립) / 310m</td>
+                                            <td>22.2명</td>
+                                        </tr>
+                                        <tr class="tbody">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울염리초(공립) / 410m</td>
+                                            <td>27.2명</td>
+                                        </tr>
+                                        <tr class="tbody">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울용강초(공립) / 681m</td>
+                                            <td>20명</td>
+                                        </tr>
+                                        <tr class="tbody">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울마포초(공립) / 921m</td>
+                                            <td>22.9명</td>
+                                        </tr>
+                                        <tr class="tbody">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울원효초(공립) / 1209m</td>
+                                            <td>23.5명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울공덕초(공립) / 1224m</td>
+                                            <td>23.4명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울창천초(공립) / 1286m</td>
+                                            <td>13명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울한서초(공립) / 1366m</td>
+                                            <td>13.1명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울서강초(공립) / 1398m</td>
+                                            <td>22.4명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울대신초(공립) / 1700m</td>
+                                            <td>15.8명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울창서초(공립) / 1779m</td>
+                                            <td>15.6명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울금양초(공립) / 1832m</td>
+                                            <td>21.5명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울아현초(공립) / 1912m</td>
+                                            <td>18.8명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>서울서교초(공립) / 1933m</td>
+                                            <td>23.4명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_element.png" width="30" height="14" alt="초등학교"></td>
+                                            <td>이화여자대학교사범대학부속초(사립) / 1980m</td>
+                                            <td>26명</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="data_sub_more jsPublicMoreButton" data-state="on" data-kinds="jsElement" data-count="5">더보기<img src="http://image.bbjang.com/imgs/bbjang/img01/ico_data_sub_more.png" width="10" height="6"></div>
+                            </div>
+
+                            <div id="jsMiddle" class="hidden">
+                                <table cellspacing="0" cellpadding="0" class="data_table">
+                                    <tbody>
+                                        <tr class="thead">
+                                            <td>구분</td>
+                                            <td>학교명</td>
+                                            <td>학급당 학생수</td>
+                                        </tr>
+                                        <tr class="tbody">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_middle.png" width="30" height="14" alt="중학교"></td>
+                                            <td>동도중(사립) / 618m</td>
+                                            <td>27.4명</td>
+                                        </tr>
+                                        <tr class="tbody">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_middle.png" width="30" height="14" alt="중학교"></td>
+                                            <td>광성중(사립) / 681m</td>
+                                            <td>23.6명</td>
+                                        </tr>
+                                        <tr class="tbody">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_middle.png" width="30" height="14" alt="중학교"></td>
+                                            <td>신수중(공립) / 690m</td>
+                                            <td>26.4명</td>
+                                        </tr>
+                                        <tr class="tbody">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_middle.png" width="30" height="14" alt="중학교"></td>
+                                            <td>서울여자중(공립) / 854m</td>
+                                            <td>26.7명</td>
+                                        </tr>
+                                        <tr class="tbody">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_middle.png" width="30" height="14" alt="중학교"></td>
+                                            <td>숭문중(사립) / 972m</td>
+                                            <td>23.4명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_middle.png" width="30" height="14" alt="중학교"></td>
+                                            <td>창천중(공립) / 1304m</td>
+                                            <td>20.6명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_middle.png" width="30" height="14" alt="중학교"></td>
+                                            <td>성심여자중(사립) / 1517m</td>
+                                            <td>27.6명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_middle.png" width="30" height="14" alt="중학교"></td>
+                                            <td>아현중(공립) / 1974m</td>
+                                            <td>25.3명</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="data_sub_more jsPublicMoreButton" data-state="on" data-kinds="jsMiddle" data-count="5">더보기<img src="http://image.bbjang.com/imgs/bbjang/img01/ico_data_sub_more.png" width="10" height="6"></div>
+                            </div>
+
+                            <div id="jsHigh" class="hidden">
+                                <table cellspacing="0" cellpadding="0" class="data_table">
+                                    <tbody>
+                                        <tr class="thead">
+                                            <td>구분</td>
+                                            <td>학교명</td>
+                                            <td>학급당 학생수</td>
+                                        </tr>
+                                        <tr class="tbody">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_high.png" width="30" height="14" alt="고등학교"></td>
+                                            <td>서울디자인고(사립) / 685m</td>
+                                            <td>25.8명</td>
+                                        </tr>
+                                        <tr class="tbody">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_high.png" width="30" height="14" alt="고등학교"></td>
+                                            <td>광성고(사립) / 725m</td>
+                                            <td>30.6명</td>
+                                        </tr>
+                                        <tr class="tbody">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_high.png" width="30" height="14" alt="고등학교"></td>
+                                            <td>서울여자고(공립) / 802m</td>
+                                            <td>28.7명</td>
+                                        </tr>
+                                        <tr class="tbody">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_high.png" width="30" height="14" alt="고등학교"></td>
+                                            <td>숭문고(사립) / 924m</td>
+                                            <td>30.9명</td>
+                                        </tr>
+                                        <tr class="tbody">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_high.png" width="30" height="14" alt="고등학교"></td>
+                                            <td>한세사이버보안고(사립) / 1347m</td>
+                                            <td>25.3명</td>
+                                        </tr>
+                                        <tr class="tbody hidden">
+                                            <td><img src="http://image.bbjang.com/imgs/bbjang/img01/img_badge_high.png" width="30" height="14" alt="고등학교"></td>
+                                            <td>성심여자고(사립) / 1486m</td>
+                                            <td>29명</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="data_sub_more jsPublicMoreButton" data-state="on" data-kinds="jsHigh" data-count="5">더보기<img src="http://image.bbjang.com/imgs/bbjang/img01/ico_data_sub_more.png" width="10" height="6"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="commerce_area price_box" id="jsPriceBox" style="display: none; min-height: 295px;"></div>
+                    <div class="commerce_area resident_box" id="population" style="display: none; min-height: 295px;"></div>
+                    <div class="commerce_area floating_box" id="floatingPopulation" style="display: none; min-height: 295px;"></div>
+                    <div class="commerce_area business_box" id="sector" style="display: none; min-height: 295px;"></div>
+                    <div class="data_more" id="otherAreasBtn" style="display:none;">타지역상권분석</div>
+                </div>
+            </div>
+
+            <div class="dt_loca_wrap" id="geoInfo">
+                <h3 class="dt_h3">주소/위치
+                    <div class="btn_report" id="btnReport"><img src="http://image.bbjang.com/imgs/bbjang/img01/ico_report.gif" width="13" height="15" alt="신고">신고</div>
+                </h3>
+                <ul class="loca_ul">
+                    <li class="loca_li">
+                        <div class="loca_left">도로명</div>
+                        <div class="loca_right">서울 마포구 큰우물로 26</div>
+                    </li>
+                    <li class="loca_li">
+                        <div class="loca_left">지번</div>
+                        <div class="loca_right">서울 마포구 용강동 380</div>
+                    </li>
+                    <li class="map_li">
+                        <div class="map" id="map" style="overflow: hidden; background: url(&quot;http://i1.daumcdn.net/dmaps/apis/loading_n.png&quot;);">
+                            <div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                                <div style="position: absolute;">
+                                    <div style="position: absolute; z-index: 0;"></div>
+                                    <div style="position: absolute; z-index: 1; transform: scale(1); left: 0px; top: 0px;"><img src="http://map2.daumcdn.net/map_2d_hd/1802zmk/L4/994/438.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -108px; top: 29px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="http://map3.daumcdn.net/map_2d_hd/1802zmk/L4/994/439.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 148px; top: 29px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="http://map0.daumcdn.net/map_2d_hd/1802zmk/L4/994/440.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 404px; top: 29px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="http://map2.daumcdn.net/map_2d_hd/1802zmk/L4/995/438.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -108px; top: -227px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="http://map3.daumcdn.net/map_2d_hd/1802zmk/L4/995/439.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 148px; top: -227px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="http://map0.daumcdn.net/map_2d_hd/1802zmk/L4/995/440.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 404px; top: -227px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"></div>
+                                    <div style="position: absolute; z-index: 1;"></div>
+                                    <div style="width: 338px; height: 178px; position: absolute; z-index: 1;"></div>
+                                    <div style="position: absolute; z-index: 1; transform: scale(1);"><svg version="1.1" style="stroke: none; stroke-dashoffset: 0.5; stroke-linejoin: round; fill: none; transform: translateZ(0px); position: absolute; width: 1690px; height: 890px; left: -676px; top: -356px;" viewBox="0 0 1690 890"><defs></defs></svg></div>
+                                    <div style="position: absolute; z-index: 1; width: 100%; height: 0px;">
+                                        <div style="position: absolute; margin: -45px 0px 0px -21.5px; z-index: 0; left: 169px; top: 89px;"><img draggable="false" src="http://image.bbjang.com/imgs/bbjang/img01/ico_location.png" alt="" style="min-width: 0px; min-height: 0px; max-width: 99999px; max-height: none; border: 0px; display: block; position: absolute; user-select: none; -webkit-user-drag: none; clip: rect(0px, 27px, 43px, 0px); top: 0px; left: 0px; width: 27px; height: 43px;"><img src="http://i1.daumcdn.net/dmaps/apis/transparent.gif" alt="" draggable="false" usemap="#daum.maps.Marker.Area:1" style="min-width: 0px; min-height: 0px; max-width: 99999px; max-height: none; border: 0px; display: block; position: absolute; user-select: none; -webkit-user-drag: none; width: 27px; height: 43px;"><map id="daum.maps.Marker.Area:1" name="daum.maps.Marker.Area:1"><area href="javascript:void(0)" alt="" shape="rect" coords="0,0,27,43" title="" style="-webkit-tap-highlight-color: transparent;"></map></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="position: absolute; z-index: 1; white-space: nowrap; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 11px; line-height: normal; font-family: tahoma, sans-serif; color: rgb(85, 85, 85); left: 7px; bottom: 5px;">
+                                <a target="_blank" href="http://map.daum.net/" title="Daum 지도로 보시려면 클릭하세요." style="float: left; width: 38px; height: 17px;"><img src="http://t1.daumcdn.net/localimg/localimages/07/mapjsapi/2x/m_bi.png" alt="Daum 지도로 이동" style="width: 37px; height: 18px; border: none;"></a>
+                                <div style="color: rgb(0, 0, 0); text-align: center; font-size: 10px; margin: 0px 2px; float: left; width: 52px;">
+                                    <div style="color: rgb(0, 0, 0);">100m</div>
+                                    <div style="position: relative; overflow: hidden; height: 8px; margin-top: -4px;"><img src="http://t1.daumcdn.net/localimg/localimages/07/mapjsapi/2x/scalebar.png" alt="" style="position: absolute; width: 164px; height: 40px; max-width: none; top: 0px; left: -82px;"></div>
+                                </div>
+                                <div style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 11px; line-height: normal; font-family: tahoma, sans-serif; float: left; margin: 3px 2px 0px;">© Kakao<span></span></div>
+                            </div>
+                            <div style="position: absolute; z-index: 2; left: 0px; top: 0px;"></div>
+                        </div>
+                        <div class="map_info hidden">매물이 용강동에 있습니다.<br>정확한 위치는 등록자에게 문의하세요.</div>
+                        <div class="btn_view_large">크게보기</div>
+                        <div class="btn_box">
+                            <div class="btn_map" id="locaRoadBtn"><img src="http://image.bbjang.com/imgs/bbjang/img01/ico_loca_road.png" width="15" height="15">로드뷰</div>
+                            <div class="btn_map" id="locaSurroundBtn"><img src="http://image.bbjang.com/imgs/bbjang/img01/ico_loca_surround.png" width="15" height="15">주변시설</div>
+                            <div class="btn_map" id="locaLandBtn"><img src="http://image.bbjang.com/imgs/bbjang/img01/ico_loca_land.png" width="15" height="15">지적도</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="dt_transport_wrap" id="transportInfo">
+                <h3 class="dt_h3">교통정보<span class="sub_txt" id="transportTxt"></span></h3>
+                <ul class="transport_ul">
+                    <li class="transport_li" id="bus">
+                        <div class="transport_left">버스</div>
+                        <div class="transport_right" id="busTxt">
+                            <div class="bus bus2">
+                                <p>마포12, 마포11</p>
+                            </div>
+                            <div class="bus bus4">
+                                <p>7013B, 7013A</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="transport_li" id="subway">
+                        <div class="transport_left">지하철</div>
+                        <div class="transport_right" id="subwayTxt">
+                            <div class="metro so05">
+                                <p>마포역 5호선<span class="bar"></span><span class="distance">586m</span></p>
+                                <p class="notFirst hidden">공덕역 5호선<span class="bar"></span><span class="distance">908m</span></p>
+                            </div>
+                            <div class="metro so06">
+                                <p>대흥역 6호선<span class="bar"></span><span class="distance">485m</span></p>
+                                <p class="notFirst hidden">광흥창역 6호선<span class="bar"></span><span class="distance">935m</span></p>
+                                <p class="notFirst hidden">공덕역 6호선<span class="bar"></span><span class="distance">938m</span></p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="data_none hidden" id="transportNone">주변 300m 이내 버스, 1km 이내 지하철 정보가 없습니다</div>
+
+                <div class="transport_more" id="morePublicTransportBtn" data-onoff="off">더보기<img src="http://image.bbjang.com/imgs/bbjang/img01/ico_data_sub_more.png" width="10" height="6"></div>
+            </div>
+
+            <!-- 등록자 정보 -->
+            <div class="dt_agent_wrap">
+                <h3 class="dt_h3">등록자정보<span class="h3_agent">(공인중개사)</span></h3>
+                <div class="agent_box" id="agentInfo" data-bang_no="9844" data-mem_no="1" data-mem_hphone="02-715-8448">
+                    <div class="agent_photo">
+                        <div class="photo_clip">
+                            <img src="http://image.bbjang.com/imgs/bbjang/img01/img_my_default_m.png" alt="세원공인중개사사무소">
+                        </div>
+                    </div>
+                    <div class="agent_txt">
+                        <span class="font_b agent_name">세원공인중개사사무소</span>
+                        <span class="font_b agent_num">02-715-8448</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 연관매물 리스트 -->
+            <div class="rc_container">
+                <div class="rc_title">사람들이 많이 찜하는 인기 매물!</div>
+                <ul class="card_u" id="relation_list">
+                    <li class="card_l" data-bang_no="9067" data-mem_no="1">
+                        <div class="card_photo">
+                            <a href="javascript:void(0);"><img src="http://image.bbjang.com/imgs/bbjang/img01/img_sale_thumnail.png" alt="더샵스타리버 102동"></a>
+                        </div>
+                        <div class="card_content">
+                            <a href="javascript:void(0);">
+                                <div class="card_title"><span class="main_badge_sale"><span>아파트 &gt; 아파트</span> - <span>매매</span></span>더샵스타리버 102동</div>
+                                <div class="card_price">12억</div>
+                                <div class="card_info"><span class="l_division">｜</span><span class="area_span">171.53&nbsp;m<sup>2</sup></span></div>
+                                <div class="yscrape"></div>
+                            </a>
+                        </div>
+                        <!--card_content-->
+                    </li>
+                    <!--card_l-->
+                    <li class="card_l" data-bang_no="9694" data-mem_no="16061">
+                        <div class="card_photo">
+                            <a href="javascript:void(0);"><img src="http://photo.bbjang.com/prg/bbImg.php?type=photo&amp;sdir=&amp;viewname=aH9-fICxd4hVcWNlZ4GAdoSEdY5UaWRnlrx8sL-5" alt="리모델링한집가격착한집"></a>
+                            <div class="photo_num">1</div>
+                        </div>
+                        <div class="card_content">
+                            <a href="javascript:void(0);">
+                                <div class="card_title"><span class="main_badge_sale"><span>아파트 &gt; 아파트</span> - <span>매매</span></span>리모델링한집가격착한집</div>
+                                <div class="card_price">11억</div>
+                                <div class="card_info"><span class="l_division">｜</span><span class="area_span">130.89&nbsp;m<sup>2</sup></span></div>
+                                <div class="yscrape"></div>
+                            </a>
+                        </div>
+                        <!--card_content-->
+                    </li>
+                    <!--card_l-->
+                    <li class="card_l" data-bang_no="9467" data-mem_no="15916">
+                        <div class="card_photo">
+                            <a href="javascript:void(0);"><img src="http://photo.bbjang.com/prg/bbImg.php?type=photo&amp;sdir=&amp;viewname=aH6Hd4Wxd4hVcWNlZ3x_eISHeotZcmdnlrx8sL-5" alt="대림역 5분거리 대림신동아아파트 월세"></a>
+                            <div class="photo_num">10</div>
+                        </div>
+                        <div class="card_content">
+                            <a href="javascript:void(0);">
+                                <div class="card_title"><span class="main_badge_month"><span>아파트 &gt; 아파트</span> - <span>월세</span></span>대림역 5분거리 대림신동아아파트 월세</div>
+                                <div class="card_price">9,500만/60만</div>
+                                <div class="card_info"><span class="l_division">｜</span><span class="area_span">92.56&nbsp;m<sup>2</sup></span></div>
+                                <div class="yscrape"></div>
+                            </a>
+                        </div>
+                        <!--card_content-->
+                    </li>
+                    <!--card_l-->
+                </ul>
+            </div>
+            <!-- 운영자 안내메시지 보내기 버튼 -->
+            <div class="dt_bb_mana_btnarea">
+                <a href="javascript:void(0);" onclick="cl.openWin('/admin/message/write?bangNo=9844&amp;returnUrl=%2F&amp;uid=&amp;popYn=y')" class="btn_guide" id="">운영자 안내메시지 보내기</a>
+            </div>
+            <div class="dt_bot_wrap">
+                <div class="dt_bot_btn ">
+                    <a href="javascript:void(0);" class="btn_click" id="phoneBtn"><img src="http://image.bbjang.com/imgs/bbjang/img01/ico_bot_call.png" width="16" height="17" class="ico_call">전화문의</a>
+                </div>
+                <div class="dt_bot_btn ">
+                    <a href="javascript:void(0);" class="btn_click" id="messageBtn"><img src="http://image.bbjang.com/imgs/bbjang/img01/ico_bot_sms.png" width="16" height="13" class="ico_sms">문자문의</a>
+                </div>
+                <div class="dt_bot_btn">
+                    <a href="javascript:void(0);" class="btn_click" id="reportBtnByBot"><img src="http://image.bbjang.com/imgs/bbjang/img01/ico_bot_report.png" width="16" height="17" class="ico_report">매물신고</a>
+                </div>
+            </div>
+        </div><!--int_cont_01 //-->
+        <div class="int_cont_02">
+            <ul class="int_slct_wrap">
+                <li class="int_slct_cont">
+                    <select class="int_slct_box">
+                        <option>최신순</option>
+                        <option>가격높은순</option>
+                        <option>가격낮은순</option>
+                        <option>면적넓은순</option>
+                        <option>면적좁은순</option>
+                    </select>
+                </li>
+                <li class="int_slct_cont">
+                    <select class="int_slct_box">
+                        <option>거래전체</option>
+                        <option>매매</option>
+                        <option>전세</option>
+                        <option>월세</option>
+                        <option>단기임대</option>
+                    </select>
+                </li>
+            </ul>
+            <!--매물리스트-->
+			<!-- 검색 결과 없음 -->
+			<div id="list_none" class="list_none">
+				<p class="list_none_row1">
+					<img src="http://image.bbjang.com/imgs/bbjang/img_my/my_list_empty_sign1.png" width="75" height="82">
+				</p>
+				<p class="list_none_row2">
+					검색 결과가 없습니다.
+				</p>
+			</div>
+			<!-- // 검색 결과 없음 -->
+            <div class="card_div" id="content_list">
+                <ul id="list_1" class="card_u">
+                    <li class="card_l" id="cardno_9702" data-bang_no="9702" data-bang_lclss="b" data-mem_no="15401">
+                        <div class="main_content">
+                            <div class="main_card_photo">
+                                <span class="main_bdg_rent photo_badge_position">공인중개사</span>
+                                <a href="javascript:void(0)">
+                                    <img src="http://photo.bbjang.com/prg/bbImg.php?type=photo&amp;sdir=&amp;viewname=aH6CdoCxd4hVcWNlZ4J_eH-IdotabmRolrx8sL-5" alt="백석동 거실넓은 큰투룸 전세">
+                                </a>
+                            </div>
+                            <div class="main_card_content">
+                                <a href="javascript:void(0)">
+                                    <div class="main_card_title">
+                                        <span class="main_bdg_rent adminWrapOpen" data-bang_no="9702" data-mem_no="15401" data-rpt_cnt="0"><span>원룸/오피스텔 &gt; 투룸</span> - <span>전세</span></span>
+                                    </div>
+                                    <div class="card_price">
+                                        1억2000만 </div>
+                                    <div class="card_info">
+                                        <span>｜</span> <span class="area_span">56.2&nbsp;m<sup>2</sup></span>
+                                    </div>
+                                    <span class="wt_day"><span class="txt_rot">오늘</span></span>
+                                    <div class="main_title_txt">백석동 거실넓은 큰투룸 전세</div>
+                                    <div id="cardTxt_9702" class="card_txt">
+                                        거실 뿐 아니라 방도 넓습니다. 베란다도 넓고 머하나 빠질게 없는 큰 투룸 월세 보증금1000만원 월70만원 가능 보시면 반할만한 매물입니다. 제가 직접찍은 사진만 올리고 있습니다. 천안 전지역 원룸, 투베이, 투룸 전월세 매물보유중 입니다. 원하시는 구역, 보증금금액, 월세 말씀해 주시면 선별해서 다양하게 보여드립니다. 문자, 카톡상담 환영합니다 카톡ID : iloveyou84 </div>
+                                    <div class="main_local_txt">
+                                        충남 천안시 서북구 백석동 </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card_l" id="cardno_9702" data-bang_no="9702" data-bang_lclss="b" data-mem_no="15401">
+                        <div class="main_content">
+                            <div class="main_card_photo">
+                                <span class="main_bdg_rent photo_badge_position">공인중개사</span>
+                                <a href="javascript:void(0)">
+                                    <img src="http://photo.bbjang.com/prg/bbImg.php?type=photo&amp;sdir=&amp;viewname=aH6CdoCxd4hVcWNlZ4J_eH-IdotabmRolrx8sL-5" alt="백석동 거실넓은 큰투룸 전세">
+                                </a>
+                            </div>
+                            <div class="main_card_content">
+                                <a href="javascript:void(0)">
+                                    <div class="main_card_title">
+                                        <span class="main_bdg_rent adminWrapOpen" data-bang_no="9702" data-mem_no="15401" data-rpt_cnt="0"><span>원룸/오피스텔 &gt; 투룸</span> - <span>전세</span></span>
+                                    </div>
+                                    <div class="card_price">
+                                        1억2000만 </div>
+                                    <div class="card_info">
+                                        <span>｜</span> <span class="area_span">56.2&nbsp;m<sup>2</sup></span>
+                                    </div>
+                                    <span class="wt_day"><span class="txt_rot">오늘</span></span>
+                                    <div class="main_title_txt">백석동 거실넓은 큰투룸 전세</div>
+                                    <div id="cardTxt_9702" class="card_txt">
+                                        거실 뿐 아니라 방도 넓습니다. 베란다도 넓고 머하나 빠질게 없는 큰 투룸 월세 보증금1000만원 월70만원 가능 보시면 반할만한 매물입니다. 제가 직접찍은 사진만 올리고 있습니다. 천안 전지역 원룸, 투베이, 투룸 전월세 매물보유중 입니다. 원하시는 구역, 보증금금액, 월세 말씀해 주시면 선별해서 다양하게 보여드립니다. 문자, 카톡상담 환영합니다 카톡ID : iloveyou84 </div>
+                                    <div class="main_local_txt">
+                                        충남 천안시 서북구 백석동 </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card_l" id="cardno_9702" data-bang_no="9702" data-bang_lclss="b" data-mem_no="15401">
+                        <div class="main_content">
+                            <div class="main_card_photo">
+                                <span class="main_bdg_rent photo_badge_position">공인중개사</span>
+                                <a href="javascript:void(0)">
+                                    <img src="http://photo.bbjang.com/prg/bbImg.php?type=photo&amp;sdir=&amp;viewname=aH6CdoCxd4hVcWNlZ4J_eH-IdotabmRolrx8sL-5" alt="백석동 거실넓은 큰투룸 전세">
+                                </a>
+                            </div>
+                            <div class="main_card_content">
+                                <a href="javascript:void(0)">
+                                    <div class="main_card_title">
+                                        <span class="main_bdg_rent adminWrapOpen" data-bang_no="9702" data-mem_no="15401" data-rpt_cnt="0"><span>원룸/오피스텔 &gt; 투룸</span> - <span>전세</span></span>
+                                    </div>
+                                    <div class="card_price">
+                                        1억2000만 </div>
+                                    <div class="card_info">
+                                        <span>｜</span> <span class="area_span">56.2&nbsp;m<sup>2</sup></span>
+                                    </div>
+                                    <span class="wt_day"><span class="txt_rot">오늘</span></span>
+                                    <div class="main_title_txt">백석동 거실넓은 큰투룸 전세</div>
+                                    <div id="cardTxt_9702" class="card_txt">
+                                        거실 뿐 아니라 방도 넓습니다. 베란다도 넓고 머하나 빠질게 없는 큰 투룸 월세 보증금1000만원 월70만원 가능 보시면 반할만한 매물입니다. 제가 직접찍은 사진만 올리고 있습니다. 천안 전지역 원룸, 투베이, 투룸 전월세 매물보유중 입니다. 원하시는 구역, 보증금금액, 월세 말씀해 주시면 선별해서 다양하게 보여드립니다. 문자, 카톡상담 환영합니다 카톡ID : iloveyou84 </div>
+                                    <div class="main_local_txt">
+                                        충남 천안시 서북구 백석동 </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card_l" id="cardno_9702" data-bang_no="9702" data-bang_lclss="b" data-mem_no="15401">
+                        <div class="main_content">
+                            <div class="main_card_photo">
+                                <span class="main_bdg_rent photo_badge_position">공인중개사</span>
+                                <a href="javascript:void(0)">
+                                    <img src="http://photo.bbjang.com/prg/bbImg.php?type=photo&amp;sdir=&amp;viewname=aH6CdoCxd4hVcWNlZ4J_eH-IdotabmRolrx8sL-5" alt="백석동 거실넓은 큰투룸 전세">
+                                </a>
+                            </div>
+                            <div class="main_card_content">
+                                <a href="javascript:void(0)">
+                                    <div class="main_card_title">
+                                        <span class="main_bdg_rent adminWrapOpen" data-bang_no="9702" data-mem_no="15401" data-rpt_cnt="0"><span>원룸/오피스텔 &gt; 투룸</span> - <span>전세</span></span>
+                                    </div>
+                                    <div class="card_price">
+                                        1억2000만 </div>
+                                    <div class="card_info">
+                                        <span>｜</span> <span class="area_span">56.2&nbsp;m<sup>2</sup></span>
+                                    </div>
+                                    <span class="wt_day"><span class="txt_rot">오늘</span></span>
+                                    <div class="main_title_txt">백석동 거실넓은 큰투룸 전세</div>
+                                    <div id="cardTxt_9702" class="card_txt">
+                                        거실 뿐 아니라 방도 넓습니다. 베란다도 넓고 머하나 빠질게 없는 큰 투룸 월세 보증금1000만원 월70만원 가능 보시면 반할만한 매물입니다. 제가 직접찍은 사진만 올리고 있습니다. 천안 전지역 원룸, 투베이, 투룸 전월세 매물보유중 입니다. 원하시는 구역, 보증금금액, 월세 말씀해 주시면 선별해서 다양하게 보여드립니다. 문자, 카톡상담 환영합니다 카톡ID : iloveyou84 </div>
+                                    <div class="main_local_txt">
+                                        충남 천안시 서북구 백석동 </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card_l" id="cardno_9702" data-bang_no="9702" data-bang_lclss="b" data-mem_no="15401">
+                        <div class="main_content">
+                            <div class="main_card_photo">
+                                <span class="main_bdg_rent photo_badge_position">공인중개사</span>
+                                <a href="javascript:void(0)">
+                                    <img src="http://photo.bbjang.com/prg/bbImg.php?type=photo&amp;sdir=&amp;viewname=aH6CdoCxd4hVcWNlZ4J_eH-IdotabmRolrx8sL-5" alt="백석동 거실넓은 큰투룸 전세">
+                                </a>
+                            </div>
+                            <div class="main_card_content">
+                                <a href="javascript:void(0)">
+                                    <div class="main_card_title">
+                                        <span class="main_bdg_rent adminWrapOpen" data-bang_no="9702" data-mem_no="15401" data-rpt_cnt="0"><span>원룸/오피스텔 &gt; 투룸</span> - <span>전세</span></span>
+                                    </div>
+                                    <div class="card_price">
+                                        1억2000만 </div>
+                                    <div class="card_info">
+                                        <span>｜</span> <span class="area_span">56.2&nbsp;m<sup>2</sup></span>
+                                    </div>
+                                    <span class="wt_day"><span class="txt_rot">오늘</span></span>
+                                    <div class="main_title_txt">백석동 거실넓은 큰투룸 전세</div>
+                                    <div id="cardTxt_9702" class="card_txt">
+                                        거실 뿐 아니라 방도 넓습니다. 베란다도 넓고 머하나 빠질게 없는 큰 투룸 월세 보증금1000만원 월70만원 가능 보시면 반할만한 매물입니다. 제가 직접찍은 사진만 올리고 있습니다. 천안 전지역 원룸, 투베이, 투룸 전월세 매물보유중 입니다. 원하시는 구역, 보증금금액, 월세 말씀해 주시면 선별해서 다양하게 보여드립니다. 문자, 카톡상담 환영합니다 카톡ID : iloveyou84 </div>
+                                    <div class="main_local_txt">
+                                        충남 천안시 서북구 백석동 </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div><!--int_cont_02 //-->
+        <div id="floatWrap" class="float_wrap">
+            <div id="floatFakeModal" class="float_fake_modal"></div>
+            <div class="float_btn">
+                <span class="blind">플로팅버튼</span>
+                <div class="ripple"></div>
+            </div>
+            <div class="float_01">
+                <div id="floatWriteText" class="float_txt">무료매물등록 / 매물관리 / 위로올리기</div>
+                <a href="javascript:void(0);" id="floatWrite" data-type="insert" class="float_write"></a>
+            </div>
+            <div class="float_02">
+                <div class="float_txt" id="floatInquireText">1:1문의 / 불편신고하기</div>
+                <a href="javascript:void(0);" id="floatInquire" class="float_inquiry"></a>
+            </div>
+            <div class="float_03">
+                <div class="float_txt" id="floatRecentViewSaleText">최근 본 매물</div>
+                <a href="javascript:void(0);" id="floatRecentViewSale" class="float_lastest"></a>
+            </div>
+            <div class="float_04">
+                <div class="float_txt" id="floatMySaleText">내가 내놓은 매물</div>
+                <a href="javascript:void(0);" id="floatMySale" class="float_mine"></a>
+            </div>
+            <div class="float_05">
+                <div class="float_txt" id="floatMapText">지도에서 찾기</div>
+                <a href="javascript:void(0);" id="floatMap" class="float_map"></a>
+            </div>
+            <div class="float_ad_area">
+                <a href="javascript:void(0);" class="float_ad_bot"><img src="http://image.bbjang.com/imgs/bbjang/bbj_ad/float_yeoboya_ad.png" alt="여보야 바로가기"></a>
+            </div>
+        </div>
+    </div><!--//container-->
+</div><!--//wrap-->
+</body>
+</html>
